@@ -13,20 +13,28 @@
 
     <h1>Greeting App</h1>
     <form>
-
+<div class="sortingForm" >
         <label class="name" for="Name">Name</label>
         <input class="inputname" type="text" name="Name" placeholder="enter your name" />
+        <span class="greeted_count count" >0</span>
+    </div>
     <div class="languages">
         <input type="radio" name="radioButn"   value="Xhosa">IsiXhosa
         <input type="radio" name="radioButn"   value="English">English
         <input type="radio" name="radioButn"   value="Sotho">Sisotho
-    </div>
-    <br>
+    </div> 
+     <br>
         <button type="submit">Greet</button>
     </form>
 <p class="response"> </p>
+<div class="storage">
+    <ul class="list_names" >
+        
+    </ul>
+</div>
 
-    <script src="./app.js" ></script>
+    <script src="./app.fact.js"></script>
+    <script src="./js/app.dom.js" ></script>
 </body>
 
-</html>
+</html> 

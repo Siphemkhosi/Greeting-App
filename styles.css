@@ -19,6 +19,28 @@ body{
   justify-content: center;
 }
 
+.sortingForm{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+label{
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: xx-large;
+}
+
+.count {
+    margin-bottom: 8px;
+    margin-left: 10px;
+	font-size: 20px;
+	padding: 10px;
+	border: 2px solid;
+	background-color: rgb(158, 99, 9);
+	border-radius:10px;
+}
+
 .inputname{
     margin-bottom: 10px;
     padding: 10px;
@@ -29,12 +51,12 @@ body{
 .languages{
     display: flex;
     flex-direction: row;
- justify-content: space-evenly;
+ justify-content: space-evenly; 
 }
 .response{
     margin-top: 10px;
-    color: blue;
-    background-color: coral;
+    /* color: blue;
+    background-color: coral; */
 }
 button{
     cursor: pointer;
