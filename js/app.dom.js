@@ -26,6 +26,7 @@ let list = document.querySelector(".list_names")
     return localStorageNames;
   }
 
+  
 
 buttonElem.addEventListener("click", function(e){
 e.preventDefault();
