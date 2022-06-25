@@ -31,14 +31,7 @@ function Greetings() {
   }
 
   function counter() {
- 
-
-if (namesGreeted[userName] === undefined){
-    count++;
-
-    namesGreeted[userName] = 0;
-
-  }
+  count++;
 
   return count;
   }
