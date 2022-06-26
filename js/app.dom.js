@@ -19,7 +19,10 @@ let list = document.querySelector(".list_names")
       const textnode = document.createTextNode(localStorageNames[localStorageNames.length - 1]);
       node.appendChild(textnode);
       list.appendChild(node);
+if( list.appendChild(node)){
 
+ theCounterElem.innerHTML = theDom.counter();
+}
     
     }
 
@@ -37,7 +40,7 @@ if(radioButtonElem === "Xhosa" && theDom.keepTrackOfNames(inputElem.value)){
     
     paragraphElem.innerHTML = "Molo " + inputElem.value
     allStorage();
-    theCounterElem.innerHTML = theDom.counter();
+    // theCounterElem.innerHTML = theDom.counter();
     
 }
 
@@ -45,14 +48,14 @@ if(radioButtonElem === "English" && theDom.keepTrackOfNames(inputElem.value)){
 
     paragraphElem.innerHTML = "Hello " + inputElem.value
     allStorage();
-    theCounterElem.innerHTML = theDom.counter();
+    // theCounterElem.innerHTML = theDom.counter();
    
 }
 
 if(radioButtonElem === "Sotho" && theDom.keepTrackOfNames(inputElem.value)){
     paragraphElem.innerHTML = "Dumela " + inputElem.value
     allStorage();
-    theCounterElem.innerHTML = theDom.counter();
+    // theCounterElem.innerHTML = theDom.counter();
    
 
 }

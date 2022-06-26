@@ -4,20 +4,20 @@ function Greetings() {
   let localStorageNames = [];
   let namesGreeted = {};
   
-  function allStorage() {
-    (keys = Object.keys(localStorage)), (i = keys.length);
+  // function allStorage() {
+  //   (keys = Object.keys(localStorage)), (i = keys.length);
 
-    while (i--) {
-      localStorageNames.push(localStorage.getItem(keys[i]));
+  //   while (i--) {
+  //     localStorageNames.push(localStorage.getItem(keys[i]));
 
-      const node = document.createElement("li");
-      const textnode = document.createTextNode(localStorageNames[0]);
-      node.appendChild(textnode);
-      document.getElementsByClassName("list_names").appendChild(node);
-    }
+  //     const node = document.createElement("li");
+  //     const textnode = document.createTextNode(localStorageNames[0]);
+  //     node.appendChild(textnode);
+  //     document.getElementsByClassName("list_names").appendChild(node);
+  //   }
 
-    return localStorageNames;
-  }
+  //   return localStorageNames;
+  // }
 
   function keepTrackOfNames(name) {
     if (names.indexOf(name) < 0) {
