@@ -1,8 +1,8 @@
 function Greetings() {
   let names = [];
   let count = 0;
-  let localStorageNames = [];
-  let namesGreeted = {};
+  // let localStorageNames = [];
+  // let namesGreeted = {};
   
   // function allStorage() {
   //   (keys = Object.keys(localStorage)), (i = keys.length);
@@ -31,6 +31,7 @@ function Greetings() {
   }
 
   function counter() {
+  localStorage.getItem()
   count++;
 
   return count;
