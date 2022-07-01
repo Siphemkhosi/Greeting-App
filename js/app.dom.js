@@ -24,8 +24,6 @@ function allStorage() {
     list.appendChild(node);
   }
 
- 
-
   return localStorageNames;
 }
 
@@ -37,24 +35,27 @@ buttonElem.addEventListener("click", function (e) {
   ).value;
 
   if (radioButtonElem === "Xhosa" && theDom.keepTrackOfNames(inputElem.value)) {
+    let alphaOnlyPattern =  /^[a-zA-Z ]+$/
+    inputElem.value.match(alphaOnlyPattern);
     paragraphElem.innerHTML = "Molo " + inputElem.value;
     allStorage();
-    theCounterElem.innerHTML = localStorageNames.length
+    theCounterElem.innerHTML = localStorageNames.length;
   }
 
-  if (
-    radioButtonElem === "English" &&
-    theDom.keepTrackOfNames(inputElem.value)
-  ) {
+  if ( radioButtonElem === "English" && theDom.keepTrackOfNames(inputElem.value)) {
+    let  alphaOnlyPattern = /^[a-zA-Z ]+$/
+    inputElem.value.match(alphaOnlyPattern);
     paragraphElem.innerHTML = "Hello " + inputElem.value;
     allStorage();
-    theCounterElem.innerHTML = localStorageNames.length
+    theCounterElem.innerHTML = localStorageNames.length;
   }
 
   if (radioButtonElem === "Sotho" && theDom.keepTrackOfNames(inputElem.value)) {
+    let  alphaOnlyPattern =  /^[a-zA-Z ]+$/
+    inputElem.value.match(alphaOnlyPattern);
     paragraphElem.innerHTML = "Dumela " + inputElem.value;
     allStorage();
-    theCounterElem.innerHTML = localStorageNames.length
+    theCounterElem.innerHTML = localStorageNames.length;
   }
 
   if (
@@ -76,4 +77,13 @@ buttonElem.addEventListener("click", function (e) {
   ) {
     paragraphElem.innerHTML = "Dumela " + inputElem.value;
   }
+});
+
+const resetElem = document.querySelector(".reset");
+
+resetElem.addEventListener("click", function () {
+  localStorageNames = theDom.resetNames();
+  list.innerHTML = "";
+  theCounterElem.innerHTML = 0;
+  paragraphElem.innerHTML = "";
 });
