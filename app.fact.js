@@ -8,10 +8,9 @@ function Greetings() {
     let letters = /^[A-Za-z]+$/;
     // let name = thename.value.match(letters);
       
-    if (names.indexOf(name) < 0 &&  name.match(letters)) {
+    if (names.indexOf(name) < 0 && name.match(letters)) {
       names.push(name);
       localStorage.setItem(name, name);
-    
 
       return true;
     } else {
@@ -23,10 +22,10 @@ function Greetings() {
   }
 
   function counter() {
+
+    names.length++
   
-  names.length++
-  
-  return names;
+    return names;
   }
 
 
