@@ -5,30 +5,6 @@ const inputElem = document.querySelector(".inputname");
 const paragraphElem = document.querySelector(".response");
 const theCounterElem = document.querySelector(".greeted_count");
 
-inputElem.addEventListener("keyup", ()=>{
-  // const value = inputElem.value;
-  // const regex = /[0-9]/
-  // const lastValue = value[value.length-1];
-  // if(regex.test(lastValue)){
-  // inputElem.value = value.slice(0,value.length -1)
-  // }
-
-  
-    var letters = /^[A-Za-z]+$/;
-    if(inputElem.value.match(letters))
-      {
-       return true;
-      }
-    else
-      {
-      // alert("message");
-      return false;
-      }
-   
-})
-
-
-
 let localStorageNames = [];
 let list = document.querySelector(".list_names");
 
@@ -58,54 +34,52 @@ buttonElem.addEventListener("click", function (e) {
     'input[name="radioButn"]:checked'
   ).value;
 
-
-  if (radioButtonElem === "Xhosa" && theDom.keepTrackOfNames(inputElem.value)) {
-    
-    paragraphElem.innerHTML = "Molo " + inputElem.value;
+  localStorage.setItem(inputElem.value, inputElem.value);
+  
+  if (radioButtonElem === "Xhosa") {
+    paragraphElem.innerHTML = theDom.Xhosa(inputElem.value);
     allStorage();
     theCounterElem.innerHTML = localStorageNames.length;
   }
 
-  if ( radioButtonElem === "English" && theDom.keepTrackOfNames(inputElem.value)
-  ) {
-    paragraphElem.innerHTML = "Hello " + inputElem.value;
+  if (radioButtonElem === "English") {
+    paragraphElem.innerHTML = theDom.English(inputElem.value);
     allStorage();
     theCounterElem.innerHTML = localStorageNames.length;
   }
 
-  if (radioButtonElem === "Sotho" && theDom.keepTrackOfNames(inputElem.value)) {
-   
-    paragraphElem.innerHTML = "Dumela " + inputElem.value;
+  if (radioButtonElem === "Sotho") {
+    paragraphElem.innerHTML = theDom.Sotho(inputElem.value);
     allStorage();
     theCounterElem.innerHTML = localStorageNames.length;
   }
 
   if (
     radioButtonElem === "Xhosa" &&
-    theDom.keepTrackOfNames(inputElem.value) === false
+    theDom.Xhosa(inputElem.value) === false
   ) {
-    paragraphElem.innerHTML = "Molo " + inputElem.value;
+    paragraphElem.innerHTML = theDom.Xhosa(inputElem.value)
   }
 
   if (
     radioButtonElem === "English" &&
-    theDom.keepTrackOfNames(inputElem.value) === false
+    theDom.English(inputElem.value) === false
   ) {
-    paragraphElem.innerHTML = "Hello " + inputElem.value;
+    paragraphElem.innerHTML = theDom.English(inputElem.value)
   }
-  
+
   if (
     radioButtonElem === "Sotho" &&
-    theDom.keepTrackOfNames(inputElem.value) === false
+    theDom.Sotho(inputElem.value) === false
   ) {
-    paragraphElem.innerHTML = "Dumela " + inputElem.value;
+    paragraphElem.innerHTML = theDom.Sotho(inputElem.value)
   }
 });
 
 const resetElem = document.querySelector(".reset");
 
 resetElem.addEventListener("click", function () {
-  localStorageNames = theDom.resetNames();
+  localStorageNames = localStorage.clear();
   list.innerHTML = "";
   theCounterElem.innerHTML = 0;
   paragraphElem.innerHTML = "";

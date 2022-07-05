@@ -1,40 +1,82 @@
 function Greetings() {
   let names = [];
-  let count = 0;
+  let xhosa = "";
+  let english = "";
+  let sisitho = "";
+  // let Name = "";
+ 
+  function Xhosa(name){
+
+    if (names.indexOf(name) < 0) {
+         names.push(name);
+         xhosa = "Molo " + name
   
+  }
+  return xhosa;
+  }
+  function English(name){
+  
+    if (names.indexOf(name) < 0) {
+         names.push(name);
+         english = "Hello " + name
+  
+  }
+  return english;
+  }
+  
+  function Sotho(name){
+  
+    if (names.indexOf(name) < 0) {
+         names.push(name);
+         sisitho = "Dumela " + name
+  
+  }
+  return sisitho
+  }
 
+  // function keepTrackOfNames(name) {
+  //   Name = name;
+  //   // let letters = /^[A-Za-z]+$/;
 
-  function keepTrackOfNames(name) {
-    let letters = /^[A-Za-z]+$/;
-    // let name = thename.value.match(letters);
+  //   if (names.indexOf(Name) < 0 ) {
+  //     names.push(Name);
+
       
-    if (names.indexOf(name) < 0 && name.match(letters)) {
-      names.push(name);
-      localStorage.setItem(name, name);
+  //     if (Name === xhosa) {
+  //       xhosa = "Molo" + Name;
+  //     xhosa
+  //     }
+  //     if (Name === english) {
+  //       english = "Hello" + Name;
+  //       english
+  //     }
+  //     if (Name === sisitho) {
+  //       sisitho = "Dumela" + Name;
+  //       sisitho;
+  //     }
 
-      return true;
-    } else {
-      return false;
-    }
-  }
-  function resetNames(){
-    localStorage.clear();
-  }
+  //     return true;
+  //   } else {
+
+  //     return false;
+  //   }
+  // }
+  // function resetNames() {
+  //   localStorage.clear();
+  // }
 
   function counter() {
+    names.length++;
 
-    names.length++
-  
     return names;
   }
 
-
   return {
-    keepTrackOfNames,
-    resetNames,
+    Xhosa,
+    English,
+    Sotho,
+    // keepTrackOfNames,
+    // resetNames,
     counter,
-   
   };
 }
-
-
