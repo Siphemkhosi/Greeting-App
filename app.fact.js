@@ -5,6 +5,16 @@ function Greetings() {
   let sisitho = "";
   // let Name = "";
  
+  let letters = /^[A-Za-z]+$/g;
+
+  function setUserValidation(name){
+    if(letters.test(name)){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
   function Xhosa(name){
 
     if (names.indexOf(name) < 0) {
@@ -34,36 +44,11 @@ function Greetings() {
   return sisitho
   }
 
-  // function keepTrackOfNames(name) {
-  //   Name = name;
-  //   // let letters = /^[A-Za-z]+$/;
-
-  //   if (names.indexOf(Name) < 0 ) {
-  //     names.push(Name);
-
-      
-  //     if (Name === xhosa) {
-  //       xhosa = "Molo" + Name;
-  //     xhosa
-  //     }
-  //     if (Name === english) {
-  //       english = "Hello" + Name;
-  //       english
-  //     }
-  //     if (Name === sisitho) {
-  //       sisitho = "Dumela" + Name;
-  //       sisitho;
-  //     }
-
-  //     return true;
-  //   } else {
-
-  //     return false;
-  //   }
-  // }
-  // function resetNames() {
-  //   localStorage.clear();
-  // }
+  function getNames(){
+    console.log(names)
+   return names;
+  }
+ 
 
   function counter() {
     names.length++;
@@ -72,9 +57,11 @@ function Greetings() {
   }
 
   return {
+    setUserValidation,
     Xhosa,
     English,
     Sotho,
+    getNames,
     // keepTrackOfNames,
     // resetNames,
     counter,
