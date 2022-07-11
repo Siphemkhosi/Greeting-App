@@ -94,7 +94,7 @@ button {
 
 }
 
-@media (min-width: 800px){
+@media (min-width: 800px) and (max-width: 1125px){
 h1{
 font-size:3em !important;
 }
