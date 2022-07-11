@@ -24,11 +24,16 @@ const list = document.querySelector(".list_names");
 //   return localStorageNames;
 
 
-// }
 
-let text = localStorage.getItem("names");
-let storage = JSON.parse(text);
-document.querySelector(".response").innerHTML = storage;
+// document.querySelector(".response").innerHTML = storage;
+// let storage = JSON.parse(text);
+// let text = localStorage.getItem("names");
+if(localStorage["names"]){
+  let theArray = JSON.parse(localStorage.getItem("names"))
+}
+
+
+
 
 buttonElem.addEventListener("click", function (e) {
   e.preventDefault();
@@ -39,52 +44,39 @@ localStorage.setItem("names", myJSON);
   const radioButtonElem = document.querySelector(
     'input[name="radioButn"]:checked'
   ).value;
+ 
 
-
-  localStorage.setItem(inputElem.value, inputElem.value);
   let userValidation = theDom.setUserValidation(inputElem.value);
+  if(!userValidation){
+    paragraphElem.innerHTML = "not compitable";
+    return 
+  }
   if(userValidation){
     if (radioButtonElem === "Xhosa") {
-      paragraphElem.innerHTML = theDom.Xhosa(inputElem.value);
+      paragraphElem.innerHTML = theDom.Xhosa();
       // allStorage();
-      theCounterElem.innerHTML = myArr.length;
+     
     }
+    
   
     if (radioButtonElem === "English") {
-      paragraphElem.innerHTML = theDom.English(inputElem.value);
+      paragraphElem.innerHTML = theDom.English();
       // allStorage();
-      theCounterElem.innerHTML = myArr.length;
+     
     }
   
     if (radioButtonElem === "Sotho") {
-      paragraphElem.innerHTML = theDom.Sotho(inputElem.value);
+      paragraphElem.innerHTML = theDom.Sotho();
       // allStorage();
-      theCounterElem.innerHTML = myArr.length;
-    }
-  
-  } 
-  
  
-  // if (
-  //   radioButtonElem === "Xhosa" &&
-  //   theDom.Xhosa(inputElem.value) === false
-  // ) {
-  //   paragraphElem.innerHTML = theDom.Xhosa(inputElem.value)
-  // }
-
-  // if (
-  //   radioButtonElem === "English" &&
-  //   theDom.English(inputElem.value) === false
-  // ) {
-  //   paragraphElem.innerHTML = theDom.English(inputElem.value)
-  // }
-
-  // if (
-  //   radioButtonElem === "Sotho" &&
-  //   theDom.Sotho(inputElem.value) === false
-  // ) {
-  //   paragraphElem.innerHTML = theDom.Sotho(inputElem.value)
-  // }
+    }
+    theCounterElem.innerHTML = myArr.length;
+  }  
+ 
+  inputElem.value  = "";
+ let stringArray = JSON.stringify(theDom.getNames())
+  localStorage.setItem("names", stringArray );
+ 
 });
 
 const resetElem = document.querySelector(".reset");
@@ -93,5 +85,6 @@ resetElem.addEventListener("click", function () {
   localStorageNames = localStorage.clear();
   list.innerHTML = "";
   theCounterElem.innerHTML = 0;
-  paragraphElem.innerHTML = "";
+  paragraphElem.innerHTML = " ";
+  alert("greeted names have been reset")
 });

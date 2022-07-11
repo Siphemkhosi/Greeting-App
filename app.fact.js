@@ -3,49 +3,62 @@ function Greetings() {
   let xhosa = "";
   let english = "";
   let sisitho = "";
-  // let Name = "";
- 
-  let letters = /^[A-Za-z]+$/g;
+  let firstName = "";
+  // let letters = /^[A-Za-z]+$/g;
 
   function setUserValidation(name){
-    if(letters.test(name)){
+    if(/^[A-Za-z]+$/.test(name)){
+      firstName = name;
       return true;
     }else{
+   firstName = "";
       return false;
     }
   }
+function getInput(){
+return firstName;
+}
 
-  function Xhosa(name){
 
-    if (names.indexOf(name) < 0) {
-         names.push(name);
-         xhosa = "Molo " + name
   
-  }
+  function Xhosa(){
+     
+      if (names.indexOf(firstName) < 0) {
+        names.push(firstName);
+        xhosa = "Molo " + firstName;
+ 
+ }else{
+  xhosa = "";
+ }
   return xhosa;
   }
-  function English(name){
+
+  function English(){
   
-    if (names.indexOf(name) < 0) {
-         names.push(name);
-         english = "Hello " + name
+    if (names.indexOf(firstName) < 0) {
+         names.push(firstName);
+         english = "Hello " + firstName
   
-  }
+  }else{
+    english = "";
+   }
   return english;
   }
   
-  function Sotho(name){
+  function Sotho(){
   
-    if (names.indexOf(name) < 0) {
-         names.push(name);
-         sisitho = "Dumela " + name
+    if (names.indexOf(firstName) < 0) {
+         names.push(firstName);
+         sisitho = "Dumela " + firstName
   
-  }
+        }else{
+          sisitho = "";
+         }
   return sisitho
   }
 
   function getNames(){
-    console.log(names)
+    // console.log(names)
    return names;
   }
  
@@ -55,15 +68,18 @@ function Greetings() {
 
     return names;
   }
+  
 
   return {
-    setUserValidation,
     Xhosa,
     English,
     Sotho,
     getNames,
+    setUserValidation,
+    getInput,
     // keepTrackOfNames,
     // resetNames,
     counter,
   };
 }
+
