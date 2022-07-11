@@ -81,20 +81,9 @@ button {
 }
 
 /* media queries */
-@media (min-width: 700px){ 
-  body{
- 
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
- align-items: center;
-    justify-items: center;
 
-}
 
-}
-
-@media (min-width: 800px) and (max-width: 1125px){
+@media (min-width: 800px) and (max-width: 1105px){
 h1{
 font-size:3em !important;
 }
